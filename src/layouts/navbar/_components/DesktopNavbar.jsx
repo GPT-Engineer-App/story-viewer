@@ -1,7 +1,8 @@
 import { Package2 } from "lucide-react";
 import { NavItem } from "./NavItem";
+import { navItems } from "@/nav-items";
 
-export const DesktopNavbar = ({ navItems }) => (
+export const DesktopNavbar = () => (
   <nav className="hidden md:flex md:items-center md:gap-5 lg:gap-6 text-lg font-medium md:text-sm">
     <NavItem
       to="/"
@@ -11,7 +12,8 @@ export const DesktopNavbar = ({ navItems }) => (
       <span className="sr-only">Acme Inc</span>
     </NavItem>
     {navItems.map((item) => (
-      <NavItem key={item.to} to={item.to}>
+      <NavItem key={item.to} to={item.to} className="flex items-center gap-2">
+        {item.icon}
         {item.title}
       </NavItem>
     ))}
